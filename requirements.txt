@@ -1,0 +1,16 @@
+pandas
+matplotlib
+streamlit-option-menu
+Pillow
+plotly
+streamlit==1.27.2
+numpy
+seaborn
+streamlit-option-menu
+streamlit-folium
+folium
+nltk
+plotly
+scikit-learn
+openpyxl
+prophet
