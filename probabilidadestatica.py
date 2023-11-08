@@ -48,7 +48,7 @@ def createPage():
         rutaAR = './data/Anomalias Robos P&G.xlsx'
         AR = pd.read_excel(rutaAR, sheet_name = "Data")
         AR['Año'] = AR['Fecha'].apply(lambda x: x.year)
-        AR['MesN'] = AR['Fecha Inicio'].apply(lambda x: x.month)
+        AR['MesN'] = AR['Fecha'].apply(lambda x: x.month)
         AR['Mes'] = AR['MesN'].map({1:"Enero", 2:"Febrero", 3:"Marzo", 4:"Abril", 5:"Mayo", 6:"Junio", 7:"Julio", 8:"Agosto", 9:"Septiembre", 10:"Octubre", 11:"Noviembre", 12:"Diciembre"})
         AR['Hora'] = AR['Fecha'].apply(lambda x: x.hour)
         AR['Estadías NOM-087'] = AR['DuracionEstimada'].map(lambda x: int(x/5) if x > 5 else 0)
