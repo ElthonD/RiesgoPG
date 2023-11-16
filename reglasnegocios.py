@@ -105,7 +105,7 @@ def createPage():
  
     counter = 0
   
-    st.markdown("<h3 style='text-align: left;'>Paso 6: Consultar Reglas de Negocio a Chatbot AI27</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: left;'>Paso 5: Consultar Reglas de Negocio a Chatbot AI27</h3>", unsafe_allow_html=True)
     st.write("Bienvenido al Chatbot AI27. Escriba un mensaje y presione Entrar para indicarte la acción que debes ejecutar.")
         
     counter += 1
