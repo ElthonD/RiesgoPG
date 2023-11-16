@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 from streamlit_option_menu import option_menu
-import start, probabilidadestatica, mapas, pronostico, reglasnegocios  # Importar páginas acá
+import start, probabilidadestatica, mapasligero, pronostico, reglasnegocios  # Importar páginas acá
 
  #### Páginas
 path_favicon = './img/favicon1.png'
@@ -35,7 +35,7 @@ if selected=="Riesgo de los Servicios":
     probabilidadestatica.createPage()
 
 if selected=="Mapas Planner":
-    mapas.createPage()
+    mapasligero.createPage()
 
 if selected=="Carga de Trabajo":
     pronostico.createPage()
