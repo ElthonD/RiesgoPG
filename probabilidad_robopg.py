@@ -1,17 +1,7 @@
 import pandas as pd
 import numpy as np
 import pickle
-from IPython.display import display, clear_output
-from sklearn import tree
-from sklearn.tree import export_graphviz
-from sklearn.tree import export_text
-from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
-from sklearn.tree import plot_tree
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import KFold
-from sklearn.metrics import confusion_matrix
 import warnings
 import os
 os.getcwd()
