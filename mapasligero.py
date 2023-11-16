@@ -289,21 +289,33 @@ def createPage():
 
         df4 = df3.copy()
 
-        xx1, xx2 = st.columns(2)
+        xx1, xx2, xx3 = st.columns(3)
 
         with xx1:
             containerxTS1 = st.container()
-            allxTS1 = st.checkbox("Seleccionar Todos", key="GGx")
+            allxTS1 = st.checkbox("Seleccionar Todos", key="GGgx")
             if allxTS1:
-                sorted_unique_diax = sorted(df4['DíaSem'].unique())
-                selected_diax = containerxTS1.multiselect('Día(s):', sorted_unique_diax, sorted_unique_diax, key="GG1x") 
-                df_selected_diax = df4[df4['DíaSem'].isin(selected_diax)].astype(str)
+                sorted_unique_mesx = sorted(df4['Mes'].unique())
+                selected_mesx = containerxTS1.multiselect('Mes(es):', sorted_unique_mesx, sorted_unique_mesx, key="GGg1x") 
+                df_selected_mesx = df4[df4['Mes'].isin(selected_mesx)].astype(str)
             else:
-                sorted_unique_diax = sorted(df4['DíaSem'].unique())
-                selected_diax = containerxTS1.multiselect('Día(s):', sorted_unique_diax, key="GG1x") 
-                df_selected_diax = df4[df4['DíaSem'].isin(selected_diax)].astype(str)
+                sorted_unique_mesx = sorted(df4['Mes'].unique())
+                selected_mesx = containerxTS1.multiselect('Mes(es):', sorted_unique_mesx, key="GGg1x") 
+                df_selected_mesx = df4[df4['Mes'].isin(selected_mesx)].astype(str)
 
         with xx2:
+            containerxTS2 = st.container()
+            allxTS2 = st.checkbox("Seleccionar Todos", key="GGx")
+            if allxTS2:
+                sorted_unique_diax = sorted(df_selected_mesx['DíaSem'].unique())
+                selected_diax = containerxTS2.multiselect('Día(s):', sorted_unique_diax, sorted_unique_diax, key="GG1x") 
+                df_selected_diax = df_selected_mesx[df_selected_mesx['DíaSem'].isin(selected_diax)].astype(str)
+            else:
+                sorted_unique_diax = sorted(df_selected_mesx['DíaSem'].unique())
+                selected_diax = containerxTS2.multiselect('Día(s):', sorted_unique_diax, key="GG1x") 
+                df_selected_diax = df_selected_mesx[df_selected_mesx['DíaSem'].isin(selected_diax)].astype(str)
+
+        with xx3:
             containerxC1 = st.container()
             allxC1 = st.checkbox("Seleccionar Todos", key="FFx")
             if allxC1: 
