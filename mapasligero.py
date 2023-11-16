@@ -284,7 +284,7 @@ def createPage():
 
         st.markdown("<h4 style='text-align: left;'>Paso 4: Zonas de Riesgo </h4>", unsafe_allow_html=True)
         st.write(""" 
-        La finalidad de este módulo es visualizar la frecuencia de robos por días y horas por las zonas de riesgo en el comportamiento histórico de robos de P&G. 
+        La finalidad de este módulo es visualizar la frecuencia de robos por días y horas por las zonas de riesgo en el comportamiento histórico por meses de los robos de P&G. 
         """)
 
         df4 = df3.copy()
@@ -327,7 +327,7 @@ def createPage():
                 selected_horax = containerxC1.multiselect('Hora(s)', sorted_unique_horax, key="FF1x")
                 df_selected_horax = df_selected_diax[df_selected_diax['Hora'].isin(selected_horax)].astype(str)
 
-        cxx1, cxx2, cxx3 = st.columns([1,5,1])
+        cxx1, cxx2, cxx3 = st.columns([1,1,1])
 
         with cxx2:
             
