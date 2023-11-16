@@ -327,17 +327,16 @@ def createPage():
                 selected_horax = containerxC1.multiselect('Hora(s)', sorted_unique_horax, key="FF1x")
                 df_selected_horax = df_selected_diax[df_selected_diax['Hora'].isin(selected_horax)].astype(str)
 
-        df_tramos = df_selected_horax.groupby(['Tramo']).size()
-        df_tramos1 = pd.DataFrame(df_tramos)
-        df_tramos1.reset_index(drop = False, inplace = True)
-        df_tramos1 = df_tramos1.rename(columns={'Tramo':'Tramos', 0:'Total'})
-        df_tramos1.sort_values(by=['Total'], inplace=True, ascending=False)
-        dias = [x for x in df_tramos1["DíaSem"] if x]
-        #igualmente lo puedes convertir a una serie 
-        serie = pd.Series(dias)
-        print(serie)
-        #dias = df_tramos1['DíaSem'].apply(lambda x: x if x else "" )
-        st.dataframe(df_tramos1)
+        cxx1, cxx2, cxx3 = st.columns([1,5,1])
+
+        with cxx2:
+            
+            df_tramos = df_selected_horax.groupby(['Tramo']).size()
+            df_tramos1 = pd.DataFrame(df_tramos)
+            df_tramos1.reset_index(drop = False, inplace = True)
+            df_tramos1 = df_tramos1.rename(columns={'Tramo':'Tramos', 0:'Total'})
+            df_tramos1.sort_values(by=['Total'], inplace=True, ascending=False)
+            st.dataframe(df_tramos1)
 
         #st.markdown("<h4 style='text-align: left;'>Paso 4: Mapa de Calor </h4>", unsafe_allow_html=True)
         #st.write(""" 
