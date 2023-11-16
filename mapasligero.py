@@ -336,7 +336,7 @@ def createPage():
             df_tramos1.reset_index(drop = False, inplace = True)
             df_tramos1 = df_tramos1.rename(columns={'Tramo':'Tramos', 0:'Total'})
             df_tramos1.sort_values(by=['Total'], inplace=True, ascending=False)
-            st.dataframe(df_tramos1)
+            st.write(df_tramos1)
 
         #st.markdown("<h4 style='text-align: left;'>Paso 4: Mapa de Calor </h4>", unsafe_allow_html=True)
         #st.write(""" 
