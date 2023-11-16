@@ -278,11 +278,11 @@ def createPage():
                 selected_dia = containerTS1.multiselect('Día(s):', sorted_unique_dia, key="GG1") 
                 df_selected_dia = df_selected_mes[df_selected_mes['Día'].isin(selected_dia)].astype(str)
     
-        st.markdown("<h5 style='text-align: left;'>Mapa de Robos</h5>", unsafe_allow_html=True)
+        st.markdown("<h5 style='text-align: left;'>Mapa de Robos P&G</h5>", unsafe_allow_html=True)
 
         mapa_coropleta = map_coropleta_fol(df_selected_dia)
 
-        st.markdown("<h4 style='text-align: left;'>Paso 4: Zonas de Riesgo </h4>", unsafe_allow_html=True)
+        st.markdown("<h4 style='text-align: left;'>Paso 4: Zonas de Riesgo P&G</h4>", unsafe_allow_html=True)
         st.write(""" 
         La finalidad de este módulo es visualizar la frecuencia de robos por días y horas por las zonas de riesgo en el comportamiento histórico por meses de los robos de P&G. 
         """)
